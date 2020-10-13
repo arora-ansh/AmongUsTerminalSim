@@ -29,7 +29,7 @@ public class Game {
 
 
     public Game() throws InputMismatchException{
-        System.out.println("Welcome to Mafia");
+        System.out.println("Welcome to Among Us");
         while(numberOfPlayers<6) {
             try {
                 System.out.print("Enter Number of Players: ");
@@ -62,7 +62,7 @@ public class Game {
         int userCharChoice=-1;
         while(userCharChoice>5 || userCharChoice<1) {
             try {
-                System.out.println("Choose a Character\n1) Mafia\n2) Detective\n3) Healer\n4) Commoner\n5) Assign Randomly");
+                System.out.println("Choose a Character\n1) Impostor\n2) Detective\n3) Healer\n4) Commoner\n5) Assign Randomly");
                 userCharChoice = in.nextInt();
             }
             catch (InputMismatchException e){
@@ -147,7 +147,7 @@ public class Game {
 
         //DISPLAY OTHER CHARACTERS OF USER'S CLASS
         if(userPlayer instanceof Mafia){
-            System.out.print("You are a mafia. Other mafia are [ ");
+            System.out.print("You are an impostor. Other impostors are [ ");
             for(int i=0;i<mafiaGenericList.size();i++){
                 if(!mafiaGenericList.get(i).equals(userPlayer)){
                     System.out.print(mafiaGenericList.get(i).toString()+" ");
@@ -237,7 +237,7 @@ public class Game {
                         }
                     }
                 }
-                System.out.println("Mafias have chosen their target.");
+                System.out.println("Impostors have chosen their target.");
             }
             //Detective chooses player to test(iff detectives alive)
             boolean detectiveValid = false;
@@ -325,7 +325,7 @@ public class Game {
                 Player playerRemoved = null;
                 for(Player alivePlayer: alivePlayers){
                     if(detectiveChoice==alivePlayer.getPlayerNumber()){
-                        System.out.println(alivePlayer.toString()+" has been voted out. Detective identified Mafia successfully.");
+                        System.out.println(alivePlayer.toString()+" has been voted out. Detective identified Impostor successfully.");
                         if(alivePlayer.equals(userPlayer)){
                             userAlive = false;
                         }
@@ -439,12 +439,12 @@ public class Game {
 
 
     private void playersWon(){
-        System.out.println("Game Over.\nThe Mafias have Lost.");
+        System.out.println("Game Over.\nThe Impostors have Lost.");
         displayGamePlayers();
     }
 
     private void mafiaWon(){
-        System.out.println("Game Over.\nThe Mafias have Won.");
+        System.out.println("Game Over.\nThe Impostors have Won.");
         displayGamePlayers();
     }
     //This function to be displayed at the start of every round
@@ -473,7 +473,7 @@ public class Game {
                 System.out.print("[User] ");
             }
         }
-        System.out.println("were Mafia");
+        System.out.println("were Impostors");
 
         for(int i=0;i<detectiveGenericList.size();i++) {
             System.out.print(detectiveGenericList.get(i).toString()+" ");

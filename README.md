@@ -3,5 +3,8 @@ A barebones terminal simulator of the famous game Among Us. Implements a turn ba
 
 Written in Java. Compile the java files and run Main.java to try the game out. 
 
+Applied concepts of Exception Handling throughout the code, and also utilizes OOPS concepts like Generic Programming and makes use of Java Collection Framework.
+
 Good for Java OOPS concepts practice and first issues.
 ### Open for Pull Requests!
+
